@@ -1,4 +1,4 @@
-# External components for Content Hub Solution Example
+# External Components For Content Hub Solution Example
 
 This is a template example to use when building a solution for managing external components
 
