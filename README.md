@@ -8,17 +8,20 @@ npm install
 
 ## Usage
 
-# Build your dist specific components feature
-npm run build --component=EntityDetails 
+### Build your dist specific components feature
+npm run build --component=ComponentFolderName 
 
-# Run you dev server
-npm run dev
+### Watch build while developing
+npm run watch --component=ComponentFolderName 
 
-## How to test in Content Hub
+### Run you dev server
+npm run dev --component=ComponentFolderName
+
+### How to test in Content Hub
 
 1. Go to page and create external component
 2. Edit the component select "From Path"
-3. Paste dev server url in box (E.g https://localhost:5173/dist/components/es/entity-details/index.js)
+3. Paste dev server url in box (E.g https://localhost:5173/dist/entitydetails.js)
 4. Save and navigate to the page with external component
 
 If you need to do changes, you will need to stop the server, run the build, and run server again.

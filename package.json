@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "watch": "vite build --watch",
-    "preview": " vite --host --https --cors",
+    "dev": " vite --host --https --cors",
     "build": "tsc && vite build"
   },
   "dependencies": {

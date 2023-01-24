@@ -6,7 +6,7 @@ interface GetUserProp {
   name: string
 }
 
-const UserInfo: React.FunctionComponent<GetUserProp> = ({ client, name }) => {
+const UserId: React.FunctionComponent<GetUserProp> = ({ client, name }) => {
   const [nameValue, setNameValue] = useState<number>();
 
   const getUserName = async (): Promise<void> => {
@@ -28,4 +28,4 @@ const UserInfo: React.FunctionComponent<GetUserProp> = ({ client, name }) => {
   );
 };
 
-export default UserInfo;
+export default UserId;

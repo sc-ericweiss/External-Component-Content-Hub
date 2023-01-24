@@ -1,11 +1,5 @@
-import { createRoot } from 'react-dom/client';
+import ReactDOM from "react-dom";
 import React from "react";
-import UserInfo from './UserInfo';
-
-declare global {
-
-    interface Window  {PAGE_OPTIONS:any}
-}
 
 const OptionsContext = React.createContext<any>(null);
 
@@ -14,33 +8,25 @@ const onEntitySaved = (evt: Event): void => {
 
     alert(`Entity with id ${id} and definition ${definitionName} was saved`);
 };
-
 window.addEventListener("ENTITY_SAVED", onEntitySaved);
 
-const userName = window.PAGE_OPTIONS.userName
-
 export default function createExternalRoot(container: HTMLElement) {
-    const root = createRoot(container);
-    
     return {
         render(context: any) {
-                root.render(
+            ReactDOM.render(
                 <OptionsContext.Provider value={context.options}>
                     <OptionsContext.Consumer>
                         {options => {
                             return (
                                 <>
-                                    <UserInfo client={context.client} name={userName}/>
                                     {/* We use a color from the theme and the entity id from the options */}
                                     <h2 style={{ color: context.theme.palette.primary.main }}>
                                         the entity id is, {options.entityId}!
                                     </h2>
                                     {/* We show a property from the config object */}
                                     <p>
-                                        The following is information from the config object:<br/>
-                                        {context.config.env.response}
-                                        
-                                       
+                                        The following is information from the config object:
+                                        {context.config.propFromConfig}
                                     </p>
                                     <p style={{ color: "var(--color-cyan, 'red')" }}>
                                         The following text is styled in the cyan color based on the --color-cyan CSS
@@ -50,13 +36,13 @@ export default function createExternalRoot(container: HTMLElement) {
                             );
                         }}
                     </OptionsContext.Consumer>
-                </OptionsContext.Provider>
-                
+                </OptionsContext.Provider>,
+                container
             );
         },
         unmount() {
             window.removeEventListener("ENTITY_SAVED", onEntitySaved);
-            root.unmount;
+            ReactDOM.unmountComponentAtNode(container);
         },
     };
 }
