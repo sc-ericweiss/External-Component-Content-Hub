@@ -32,8 +32,6 @@ npm run dev --component=ComponentFolderName
 4. In the drop-down list, click the name of your bundle asset.
 5. Click Save.
 
-If you need to do changes, you will need to stop the server, run the build, and run server again.
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
