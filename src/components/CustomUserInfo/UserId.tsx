@@ -10,7 +10,7 @@ const UserId: React.FunctionComponent<GetUserProp> = ({ client, name }) => {
   const [nameValue, setNameValue] = useState<number>();
 
   const getUserName = async (): Promise<void> => {
-    // We get the draft settings.
+    // We get the user Id here
     const userName = await client.users.getUserIdAsync(name)
 
     if (userName) {
