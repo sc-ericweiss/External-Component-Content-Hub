@@ -1,6 +1,6 @@
-# External Components For Content Hub Solution Example
+# External Components For Sitecore's Content Hub Solution Example
 
-This is a template example to use when building a solution for managing external components
+This is a template example to use when building a solution for managing external components inside Sitecore's Content Hub. For more information please visit https://doc.sitecore.com/ch/en/developers/42/cloud-dev/integration-components--external-page-component--overview.html
 
 ## Installation
 
